@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mmc.bootstrap.v5", "mmc.bootstrap.v5\mmc.bootstrap.v5.csproj", "{0F734C9C-0276-4048-89F7-7652E45454DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mmc.bootstrap.demo", "mmc.bootstrap.demo\mmc.bootstrap.demo.csproj", "{76C3C294-C99F-4590-AB31-C92531985593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mmc.toolkit", "mmc.toolkit\mmc.toolkit.csproj", "{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F734C9C-0276-4048-89F7-7652E45454DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F734C9C-0276-4048-89F7-7652E45454DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F734C9C-0276-4048-89F7-7652E45454DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F734C9C-0276-4048-89F7-7652E45454DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76C3C294-C99F-4590-AB31-C92531985593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76C3C294-C99F-4590-AB31-C92531985593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76C3C294-C99F-4590-AB31-C92531985593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76C3C294-C99F-4590-AB31-C92531985593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

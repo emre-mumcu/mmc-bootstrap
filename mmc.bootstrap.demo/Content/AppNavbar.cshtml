@@ -1,0 +1,103 @@
+﻿<navbar title="{mmc.bootstrap}">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                References
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+                <li><a class="dropdown-item" href="https://bootswatch.com/" target="_blank">Bootswatch</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="https://bootswatch.com/api/5.json" target="_blank">Bootswatch API</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <form class="d-flex" role="search">
+        <select class="form-select mx-2"></select>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+</navbar>
+
+
+<script>
+
+    fetch('https://bootswatch.com/api/5.json')
+        .then(response => response.json())
+        .then(data => load(data));
+
+    function load(data) {
+
+        const themes = addBootstrapToThemes(data);
+
+        const select = document.querySelector('select');
+
+        const option = document.createElement('option');
+        option.textContent = "Select a Theme"; // without value means change event wont trigger!!!
+        select.append(option);
+
+        themes.forEach((value, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = value.name;
+
+            select.append(option);
+        });
+
+        select.addEventListener('change', (e) => {
+            const theme = themes[e.target.value];
+            localStorage.setItem('theme', JSON.stringify(theme));
+            document.querySelector('#theme').setAttribute('href', theme.css);
+        });
+    }
+
+    function setThemeFromLocalStorage() {
+        if (localStorage.getItem('theme') !== null) {
+            const theme = JSON.parse(localStorage.getItem('theme'));
+            document.querySelector('#theme').setAttribute('href', theme.css);
+        }
+        // localStorage.removeItem('username');
+        // localStorage.clear();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        setThemeFromLocalStorage();
+    });
+
+    function addBootstrapToThemes(data) {
+        let defaultItem = JSON.parse(JSON.stringify(data.themes[0]));
+
+        defaultItem.name = "Bootstrap";
+        defaultItem.description = "Bootstrap default theme";
+        defaultItem.thumbnail = "";
+        defaultItem.preview = "";
+        defaultItem.css = `https://cdn.jsdelivr.net/npm/bootstrap@@${data.version}/dist/css/bootstrap.css`;
+        defaultItem.cssMin = `https://cdn.jsdelivr.net/npm/bootstrap@@${data.version}/dist/css/bootstrap.min.css`;
+        defaultItem.cssCdn = `https://cdn.jsdelivr.net/npm/bootstrap@@${data.version}/dist/css/bootstrap.min.css`;
+        defaultItem.scss = "";
+        defaultItem.scssVariables = "";
+
+        data.themes.splice(0, 0, defaultItem);
+
+        return data.themes;
+    }
+
+</script>
+
+@*
+const input = document.getElementById('fname');
+const changeEvent = new Event('change');
+input.dispatchEvent(changeEvent);
+
+// const changeEvent = new Event('change');
+// select.dispatchEvent(changeEvent);
+*@

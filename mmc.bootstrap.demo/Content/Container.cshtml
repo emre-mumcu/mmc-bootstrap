@@ -1,0 +1,35 @@
+﻿@using Markdig
+@using System.Globalization
+
+@model string
+
+@{
+    string GetFile()
+    {
+        var pipeline = new MarkdownPipelineBuilder()
+        .UseAdvancedExtensions()
+        .Build();
+
+        string fileName = $"{System.IO.Path.Combine("Content", "Partials", $"{Model}.cshtml")}";
+        string readmeStr = System.IO.File.ReadAllText(fileName);
+        return Markdown.ToHtml(readmeStr, pipeline);
+    }
+}
+
+<div class="row my-4">
+    <div class="col-12 pb-4 position-relative">
+        <a class="btn btn-secondary position-absolute end-0 me-3" asp-controller="Home" asp-action="Index"  asp-route-id="" >
+            <span class="material-symbols-outlined">arrow_back</span>Back
+        </a>
+    </div>
+    <div class="col">
+        <h4>Sample</h4>
+        <partial name="@Model" />
+    </div>
+    <div class="col">        
+        <h4>Syntax</h4>
+        <mmc-code language="xml">
+            @GetFile()
+        </mmc-code>
+    </div>
+</div>
