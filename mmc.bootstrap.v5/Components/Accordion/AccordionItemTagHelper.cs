@@ -4,8 +4,8 @@ using mmc.bootstrap.v5.Contexts;
 
 namespace mmc.bootstrap.v5.Components.Accordion;
 
-[HtmlTargetElement("accordion-item", TagStructure = TagStructure.NormalOrSelfClosing)]
-[HtmlTargetElement(ParentTag = "accordion")]
+[HtmlTargetElement("mmc-accordion-item", TagStructure = TagStructure.NormalOrSelfClosing)]
+[HtmlTargetElement(ParentTag = "mmc-accordion")]
 public class AccordionItemTagHelper : TagHelper
 {
     public string Title { get; set; } = null!;

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace mmc.bootstrap.v5.Components.Breadcrumb;
 
-[HtmlTargetElement("breadcrumb", TagStructure = TagStructure.NormalOrSelfClosing)]
+[HtmlTargetElement("mmc-breadcrumb", TagStructure = TagStructure.NormalOrSelfClosing)]
 public class BreadcrumbTagHelper : TagHelper
 {
     [ViewContext]

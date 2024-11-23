@@ -6,10 +6,10 @@ using mmc.bootstrap.v5.Common;
 
 namespace mmc.bootstrap.v5.Components.Alert;
 
-[HtmlTargetElement("alert")]
+[HtmlTargetElement("mmc-alert")]
 public class AlertTagHelper : TagHelper
 {
-    public BootstrapType Type { get; set; } = BootstrapType.primary;
+    public Variant Variant { get; set; } = Variant.primary;
 
     public bool Dismissable { get; set; } = true;
 
@@ -23,7 +23,7 @@ public class AlertTagHelper : TagHelper
 
         output.AddClass("alert", HtmlEncoder.Default);
 
-        output.AddClass(Type.GetAttribute<AlertTypeAttribute>()?.Name ?? string.Empty, HtmlEncoder.Default);
+        output.AddClass($"alert-{Variant}", HtmlEncoder.Default);
 
         if (Dismissable)
         {

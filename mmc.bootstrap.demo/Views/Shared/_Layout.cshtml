@@ -2,24 +2,22 @@
 <html lang="tr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp">
-    <link rel="stylesheet" href="@Url.Content("~/css/app.css")" />
-    <mmc-style version="5.3.3" />
-    @await RenderSectionAsync("head", required: false)    
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<mmc-css-material-symbols-all />
+	<mmc-css-material-icons-all />
+	<mmc-css-bs version="5.3.3" />
+	<link rel="stylesheet" href="@Url.Content("~/css/app.css")" />
+	@await RenderSectionAsync("head", required: false)
 </head>
 
 <body>
-    <div class="container-lg">
-        @RenderBody()
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
-    @await RenderSectionAsync("body", required: false)
+	<div class="container-lg">
+		@RenderBody()
+	</div>
+	<mmc-js-bs version="5.3.3" />
+	@await RenderSectionAsync("body", required: false)
 </body>
 
 </html>

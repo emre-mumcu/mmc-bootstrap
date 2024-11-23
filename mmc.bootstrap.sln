@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mmc.bootstrap.demo", "mmc.b
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mmc.toolkit", "mmc.toolkit\mmc.toolkit.csproj", "{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mmc.web", "mmc.web\mmc.web.csproj", "{3B3A68AA-F4FE-4F0C-AB52-6E5255848D0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E4B7415-D6F7-498C-B6AA-DAAEC16D24BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3A68AA-F4FE-4F0C-AB52-6E5255848D0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3A68AA-F4FE-4F0C-AB52-6E5255848D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3A68AA-F4FE-4F0C-AB52-6E5255848D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3A68AA-F4FE-4F0C-AB52-6E5255848D0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

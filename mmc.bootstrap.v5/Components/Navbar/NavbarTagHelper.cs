@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace mmc.bootstrap.v5.Components.Navbar;
 
-[HtmlTargetElement("navbar", TagStructure = TagStructure.NormalOrSelfClosing)]
+[HtmlTargetElement("mmc-navbar", TagStructure = TagStructure.NormalOrSelfClosing)]
 [RestrictChildren("ul", "form")]
 public class NavbarTagHelper : TagHelper
 {

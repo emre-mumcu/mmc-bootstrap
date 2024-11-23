@@ -6,8 +6,8 @@ using mmc.bootstrap.v5.Contexts;
 
 namespace mmc.bootstrap.v5.Components.Accordion;
 
-[HtmlTargetElement("accordion", TagStructure = TagStructure.NormalOrSelfClosing)]
-[RestrictChildren("accordion-item")]
+[HtmlTargetElement("mmc-accordion", TagStructure = TagStructure.NormalOrSelfClosing)]
+[RestrictChildren("mmc-accordion-item")]
 public class AccordionTagHelper : TagHelper
 {
     public override void Process(TagHelperContext context, TagHelperOutput output)

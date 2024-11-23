@@ -1,19 +1,18 @@
-﻿@using Markdig
-@using System.Globalization
-
+﻿@using mmc.toolkit.Extensions.Common
 @model string
 
 @{
-    string GetFile()
-    {
-        var pipeline = new MarkdownPipelineBuilder()
-        .UseAdvancedExtensions()
-        .Build();
-
-        string fileName = $"{System.IO.Path.Combine("Content", "Partials", $"{Model}.cshtml")}";
-        string readmeStr = System.IO.File.ReadAllText(fileName);
-        return Markdown.ToHtml(readmeStr, pipeline);
+    string GetContent()
+    {               
+		System.IO.FileInfo file = new System.IO.FileInfo($"{System.IO.Path.Combine("Content", "Partials", $"{Model}.cshtml")}");
+        return file.GetStringContent();
     }
+
+	string GetMarkdownHtml()
+	{
+		System.IO.FileInfo file = new System.IO.FileInfo($"{System.IO.Path.Combine("Content", "Partials", $"{Model}.md")}");
+		return file.Markdown2Html();
+	}
 }
 
 <div class="row my-4">
@@ -22,14 +21,13 @@
             <span class="material-symbols-outlined">arrow_back</span>Back
         </a>
     </div>
-    <div class="col">
+    <div class="col-4">
         <h4>Sample</h4>
         <partial name="@Model" />
     </div>
-    <div class="col">        
+    <div class="col-8">        
         <h4>Syntax</h4>
-        <mmc-code language="xml">
-            @GetFile()
-        </mmc-code>
+        <mmc-code language="xml">@GetContent()</mmc-code>	
+		@Html.Raw(GetMarkdownHtml())
     </div>
 </div>
